@@ -1,0 +1,27 @@
+
+{% extends 'master.html' %}
+
+{% block content %}
+<div id="login-box">
+    <div class="left">
+        <h1>Sign up</h1>
+        <form action="{{ url_for('signin') }}" method="post">
+            {{ form.hidden_tag() }}
+            {{ form.TicketNumber(placeholder="Ticket Number", value = data.TicketNumber)}}
+            {{ form.username(placeholder="Username", value = data.username)}}
+			{{ form.TYPE(placeholder="Type", value = data.TYPE)}}
+            {{ form.StoryPoints(placeholder="Story Points", value = data.StoryPoints)}}
+            {{ form.signin_submit()}}
+        </form>
+	</div>
+		
+	<div class="right">
+       <span class="loginwith">Sign in with<br />social network</span>
+       <button class="social-signin facebook">Log in with facebook</button>
+       <button class="social-signin twitter">Log in with Twitter</button>
+       <button class="social-signin google">Log in with Google+</button>
+    </div>
+    <div class="or">OR</div>
+</div>
+
+{% endblock content %}
